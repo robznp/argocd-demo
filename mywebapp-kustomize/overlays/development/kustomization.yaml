@@ -1,0 +1,14 @@
+resources:
+  - ../../base
+
+configMapGenerator:
+  - name: mywebapp-config
+    literals:
+      - HEADER_TEXT=Welcome to My Web App - Kustomize - Development!
+      - ENV=development
+
+patches:
+  - path: deployment-patch.yaml
+:
+  - configMap.yaml
+  - deployment-patch.yaml

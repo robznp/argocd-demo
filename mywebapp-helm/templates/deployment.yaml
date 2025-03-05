@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "mywebapp-helm.fullname" . }}  # Use helper template for name
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ include "mywebapp-helm.fullname" . }}  # Consistent name across resources
+  template:
+    metadata:
+      labels:
+        app: {{ include "mywebapp-helm.fullname" . }}  # Consistent label
+    spec:
+      containers:
+        - name: mywebapp
+          image: ghcr.io/robznp/mywebapp:
+          ports:
+            - containerPort: 80
+          env:
+            - name: HEADER_TEXT
+              valueFrom:
+                configMapKeyRef:
+                  key: headerText
+                  name: {{ include "mywebapp-helm.fullname" . }}-header  # Dynamic name

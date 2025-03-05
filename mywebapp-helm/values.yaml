@@ -1,0 +1,11 @@
+image:
+  repository: ghcr.io/robznp/mywebapp
+  tag: latest
+
+ingress:
+  enabled: true
+  host: mywebapp.local
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: "/"
+
+headerText: "Welcome to My Custom Web App!"

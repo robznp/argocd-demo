@@ -1,6 +1,5 @@
 resources:
   - ../../base
-
 patches:
+  - path: configmap-patch.yaml
   - path: deployment-patch.yaml
-  - path: configMap-patch.yaml

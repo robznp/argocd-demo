@@ -15,11 +15,9 @@ spec:
       containers:
         - name: mywebapp
           image: ghcr.io/robznp/mywebapp:latest
-          ports:
-            - containerPort: 80
           env:
             - name: HEADER_TEXT
               valueFrom:
                 configMapKeyRef:
-                  name: mywebapp-config
-                  key: HEADER_TEXT
+                  name: mywebapp-header
+                  key: headerText

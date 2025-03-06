@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: mywebapp-config
-data:
-  HEADER_TEXT: "Welcome to My Web App - Kustomize - Development!"

@@ -3,8 +3,9 @@ kind: Service
 metadata:
   name: mywebapp
 spec:
-  ports:
-    - port: 80
-      targetPort: 80
   selector:
     app: mywebapp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

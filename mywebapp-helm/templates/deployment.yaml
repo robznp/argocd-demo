@@ -21,5 +21,5 @@ spec:
             - name: HEADER_TEXT
               valueFrom:
                 configMapKeyRef:
+                  name: {{ include "mywebapp-helm.fullname" . }}-header
                   key: headerText
-                  name: {{ include "mywebapp-helm.fullname" . }}-header  # Dynamic name

@@ -1,11 +1,7 @@
-image:
-  repository: ghcr.io/robznp/mywebapp
-  tag: latest
-
 ingress:
-  enabled: true
-  host: mywebapp.local
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: "/"
+  enabled: false
 
-headerText: "Welcome to My Custom Web App!"
+service:
+  type: ClusterIP  # or NodePort if you prefer to use port-forwarding with NodePort
+
+headerText: "Welcome to My Custom Web App! - Helm"

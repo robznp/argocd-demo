@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: mywebapp
-          image: ghcr.io/robznp/mywebapp:
+          image: ghcr.io/robznp/mywebapp:latest
           ports:
             - containerPort: 80
           env:
